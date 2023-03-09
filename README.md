@@ -64,7 +64,7 @@ Response :
 Request :
 
 - Method : PUT/PATCH
-- Endpoint : `api/mahasiswa{nim_mahasiswa}`
+- Endpoint : `api/mahasiswa/{nim_mahasiswa}`
 - Header :
   - Content-Type : application/json
   - Accept : application/json
