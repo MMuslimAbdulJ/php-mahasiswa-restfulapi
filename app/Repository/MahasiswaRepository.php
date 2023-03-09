@@ -23,9 +23,9 @@ class MahasiswaRepository {
         return $mahasiswa;
     }
 
-    public function findByNim(string $id) : ?Mahasiswa {
+    public function findByNim(string $nim) : ?Mahasiswa {
         $statement = $this->connection->prepare('SELECT nim, nama, fakultas, prodi FROM mahasiswa WHERE nim = ?');
-        $statement->execute([$id]);
+        $statement->execute([$nim]);
         try{
             if ($row = $statement->fetch()) {
                 $mahasiswa = new Mahasiswa;
