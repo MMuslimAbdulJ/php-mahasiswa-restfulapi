@@ -30,8 +30,8 @@ class MahasiswaServiceImpl implements MahasiswaService
             Database::beginTransaction();
 
             $mahasiswaInDB = $this->mahasiswaRepository->findByNim($createMahasiswaRequest->nim);
-            if ($mahasiswaInDB == null) {
-                throw new validationException("User with NIM {$createMahasiswaRequest->nim} is already exists");
+            if ($mahasiswaInDB != null) {
+                throw new validationException("Mahasiswa with NIM {$createMahasiswaRequest->nim} is already exists");
             }
 
             $mahasiswa = new Mahasiswa();
@@ -101,6 +101,7 @@ class MahasiswaServiceImpl implements MahasiswaService
             if ($mahasiswa == null) {
                 throw new validationException("Your NIM request is wrong");
             }
+            Database::commitTransaction();
             return "Delete success";
         } catch (\Exception $exception) {
             Database::rollbackTransaction();
