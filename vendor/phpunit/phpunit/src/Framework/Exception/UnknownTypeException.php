@@ -14,15 +14,14 @@ use function sprintf;
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  */
-final class ComparisonMethodDoesNotDeclareBoolReturnTypeException extends Exception
+final class UnknownTypeException extends InvalidArgumentException
 {
-    public function __construct(string $className, string $methodName)
+    public function __construct(string $name)
     {
         parent::__construct(
             sprintf(
-                'Comparison method %s::%s() does not declare bool return type.',
-                $className,
-                $methodName
+                'Type "%s" is not known',
+                $name
             )
         );
     }
