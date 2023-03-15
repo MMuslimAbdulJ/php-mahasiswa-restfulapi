@@ -101,6 +101,7 @@ class MahasiswaServiceImpl implements MahasiswaService
             if ($mahasiswa == null) {
                 throw new validationException("Your NIM request is wrong");
             }
+            $this->mahasiswaRepository->deleteByNim($mahasiswa->nim);
             Database::commitTransaction();
             return "Delete success";
         } catch (\Exception $exception) {
