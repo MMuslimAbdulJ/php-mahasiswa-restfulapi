@@ -1,5 +1,8 @@
 <?php 
-
+/**
+ * prod is for production
+ * test is for unit test purpose
+ */
 function getConfig() : array {
     return [
         'database' => [
