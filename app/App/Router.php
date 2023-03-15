@@ -1,6 +1,7 @@
 <?php
 
 namespace muslim\restfulapi\App;
+use muslim\restfulapi\Exception\validationException;
 
 class Router
 {
@@ -43,8 +44,7 @@ class Router
                 return;
             }
         }
-        http_response_code(404);
-        echo "PAGE NOT FOUND";
+        Json::responseError('Not Found', 404, new validationException('The endpoint you requested does not exist'));
     }
 
 }
