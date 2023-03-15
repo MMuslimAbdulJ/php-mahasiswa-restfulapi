@@ -5,7 +5,9 @@ use PHPUnit\Framework\TestCase;
 use muslim\restfulapi\Config\Database;
 use muslim\restfulapi\Entity\Mahasiswa;
 use muslim\restfulapi\Repository\MahasiswaRepository;
-
+/**
+ * Repository testing
+ */
 class MahasiswaRepositoryTest extends TestCase {
 
     private MahasiswaRepository $mahasiswaRepository;
@@ -14,6 +16,7 @@ class MahasiswaRepositoryTest extends TestCase {
         $this->mahasiswaRepository = new MahasiswaRepository(Database::getConnection());
         $this->mahasiswaRepository->deleteAll();
     }
+
 
     public function testSave() : void {
         $mahasiswa = new Mahasiswa;
@@ -85,7 +88,6 @@ class MahasiswaRepositoryTest extends TestCase {
         $result = $this->mahasiswaRepository->findByNim($mahasiswa->nim);
         self::assertNull($result);
     }
-
 }
 
 ?>
