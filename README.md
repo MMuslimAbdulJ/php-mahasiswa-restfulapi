@@ -13,8 +13,8 @@ Request :
 
 ```json
 {
-  "nim": "string, unique",
-  "nama": "string (9)",
+  "nim": "string, unique, (9)",
+  "nama": "string",
   "fakultas": "string",
   "prodi": "string"
 }
@@ -27,8 +27,8 @@ Response :
   "code": "number",
   "status": "string",
   "data": {
-    "nim": "string, unique",
-    "nama": "string (9)",
+    "nim": "string, unique, (9)",
+    "nama": "string",
     "fakultas": "string",
     "prodi": "string"
   }
@@ -51,8 +51,8 @@ Response :
   "code": "number",
   "status": "string",
   "data": {
-    "nim": "string, unique",
-    "nama": "string (9)",
+    "nim": "string, unique, (9)",
+    "nama": "string",
     "fakultas": "string",
     "prodi": "string"
   }
@@ -72,7 +72,7 @@ Request :
 
 ```json
 {
-  "nama": "string (9)",
+  "nama": "string",
   "fakultas": "string",
   "prodi": "string"
 }
@@ -85,8 +85,8 @@ Response :
   "code": "number",
   "status": "string",
   "data": {
-    "nim": "string, unique",
-    "nama": "string (9)",
+    "nim": "string, unique, (9)",
+    "nama": "string",
     "fakultas": "string",
     "prodi": "string"
   }
