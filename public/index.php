@@ -1,10 +1,17 @@
 <?php 
+/**
+ * The place where requests are received first
+ */
 require_once __DIR__ . './../vendor/autoload.php';
 use muslim\restfulapi\App\Router;
 use muslim\restfulapi\Config\Database;
 use muslim\restfulapi\Controller\MahasiswaController;
 
 // Database::getConnection('prod'); // turn off for unit-test, turn on for production
+
+/**
+ * Register all routes
+ */
 
 // Create Mahasiswa
 Router::add('POST', '/api/mahasiswa', MahasiswaController::class, 'createMahasiswa', []);

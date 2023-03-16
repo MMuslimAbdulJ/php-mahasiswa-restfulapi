@@ -1,7 +1,7 @@
 <?php 
 /**
- * prod is for production
- * test is for unit test purpose
+ * prod = for production
+ * test = for unit test purpose
  */
 function getConfig() : array {
     return [

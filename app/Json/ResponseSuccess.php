@@ -1,6 +1,9 @@
 <?php
-
+/**
+ * Json template for response success
+ */
 namespace muslim\restfulapi\Json;
+
 if($data == null) {
     $json = array(
         'code' => $code,

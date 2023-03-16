@@ -1,4 +1,7 @@
 <?php
+/**
+ * Json response for response error
+ */
 namespace muslim\restfulapi\Json;
 
 if(isset($data) && $data != null) {

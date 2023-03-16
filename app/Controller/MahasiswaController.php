@@ -14,12 +14,14 @@ class MahasiswaController {
     
     private MahasiswaServiceImpl $mahasiswaService;
 
+    // Define the required object in the Controller
     public function __construct() {
         $connection = Database::getConnection();
         $mahasiswaRepository = new MahasiswaRepository($connection);
         $this->mahasiswaService = new MahasiswaServiceImpl($mahasiswaRepository);
     }
 
+    // Controller for API Request : create mahasiswa
     public function createMahasiswa() {
         $data = json_decode(file_get_contents("php://input"));
         $request = new CreateMahasiswaRequest();
@@ -35,6 +37,7 @@ class MahasiswaController {
         }
     }
 
+    // Controller for API Request : get mahasiswa
     public function getMahasiswa(string $nimMahasiswa) {
         $request = new GetMahasiswaRequest();
         $request->nim = $nimMahasiswa;
@@ -46,6 +49,7 @@ class MahasiswaController {
         }
     }
 
+    // Controller for API Request : update mahasiswa
     public function updateMahasiswa(string $nimMahasiswa) {
         $data = json_decode(file_get_contents("php://input"));
         $request = new UpdateMahasiswaRequest();
@@ -60,6 +64,7 @@ class MahasiswaController {
         }
     }
 
+    // Controller for API Request : delete mahasiswa
     public function deleteMahasiswa(string $nimMahasiswa) {
         $request = new DeleteMahasiswaRequest();
         $request->nim = $nimMahasiswa;
@@ -70,9 +75,6 @@ class MahasiswaController {
             Json::responseError('Resource does not exists', 404, $exception);
         }
     }
-
-
-    
 
 }
 

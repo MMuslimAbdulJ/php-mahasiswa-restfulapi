@@ -1,5 +1,7 @@
-<?php 
-
+<?php
+/**
+ * Class for API request : update mahasiswa
+ */
 namespace muslim\restfulapi\Model;
 
 class UpdateMahasiswaRequest {

@@ -1,5 +1,7 @@
 <?php 
-
+/**
+ * Interface for contract to service implementation
+ */
 namespace muslim\restfulapi\Service;
 use muslim\restfulapi\Model\CreateMahasiswaRequest;
 use muslim\restfulapi\Model\DeleteMahasiswaRequest;

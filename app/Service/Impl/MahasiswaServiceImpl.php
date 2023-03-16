@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * This is services for Mahasiswa
+ */
 namespace muslim\restfulapi\Service\Impl;
 
 use muslim\restfulapi\Config\Database;
@@ -16,13 +18,14 @@ use muslim\restfulapi\Model\CreateMahasiswaRequest;
 class MahasiswaServiceImpl implements MahasiswaService
 {
 
-    private MahasiswaRepository $mahasiswaRepository;
+    private MahasiswaRepository $mahasiswaRepository; // Define mahasiswa repository property
 
     public function __construct(MahasiswaRepository $mahasiswaRepository)
     {
-        $this->mahasiswaRepository = $mahasiswaRepository;
+        $this->mahasiswaRepository = $mahasiswaRepository; // Define mahasiswa repository object that will injected from the parameter
     }
 
+    // Service for create mahasiswa
     public function create(CreateMahasiswaRequest $createMahasiswaRequest): MahasiswaResponse
     {
         $this->validateMahasiswaCreateRequest($createMahasiswaRequest);
@@ -53,6 +56,7 @@ class MahasiswaServiceImpl implements MahasiswaService
         }
     }
 
+    // Service to get mahasiswa
     public function get(GetMahasiswaRequest $getMahasiswaRequest): MahasiswaResponse
     {
         $this->validateGetMahasiswaRequest($getMahasiswaRequest);
@@ -65,6 +69,7 @@ class MahasiswaServiceImpl implements MahasiswaService
         return $response;
     }
 
+    // Service to update mahasiswa
     public function update(UpdateMahasiswaRequest $updateMahasiswaRequest, string $nim): MahasiswaResponse
     {
         $this->validateMahasiswaUpdateRequest($updateMahasiswaRequest);
@@ -92,6 +97,7 @@ class MahasiswaServiceImpl implements MahasiswaService
         }
     }
 
+    // Service to delete mahasiswa
     public function delete(DeleteMahasiswaRequest $deleteMahasiswaRequest): string
     {
         $this->validateDeleteMahasiswaRequest($deleteMahasiswaRequest);
@@ -110,6 +116,9 @@ class MahasiswaServiceImpl implements MahasiswaService
         }
     }
 
+/**
+ * This side is to validate every service in above
+ */
     private function validateMahasiswaCreateRequest(CreateMahasiswaRequest $createMahasiswaRequest)
     {
         if (

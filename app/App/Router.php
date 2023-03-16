@@ -1,12 +1,15 @@
 <?php
-
+/**
+ * Router for web request
+ */
 namespace muslim\restfulapi\App;
 use muslim\restfulapi\Exception\validationException;
 
 class Router
 {
-    private static array $routes = [];
+    private static array $routes = []; // Array for storing the Routes
 
+    // Method for registering existing routes from public
     public static function add(
         string $method,
         string $path,
@@ -24,6 +27,7 @@ class Router
         ];
     }
 
+    // Run all the routes
     public static function run() : void {
         $path = '/';
         if(isset($_SERVER['PATH_INFO'])) {

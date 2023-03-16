@@ -1,12 +1,14 @@
 <?php 
-
+/**
+ * Class to represent the tables in the database
+ */
 namespace muslim\restfulapi\Entity;
 
 class Mahasiswa {
-    public string $nim;
-    public string $nama;
-    public string $fakultas;
-    public string $prodi;
+    public string $nim; // unique, varchar
+    public string $nama; // varchar
+    public string $fakultas; // varchar
+    public string $prodi; // varchar
 }
 
 ?>
