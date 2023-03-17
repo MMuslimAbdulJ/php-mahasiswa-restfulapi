@@ -8,13 +8,13 @@ function getConfig() : array {
         'database' => [
             'prod' => [
                 'url' => 'mysql:host=localhost:3306;dbname=restapi',
-                'username' => 'mmuslimabdulj',
-                'password' => 'Babang_030'
+                'username' => 'your_database_username',
+                'password' => 'your_database_password'
             ],
             'test' => [
                 'url' => 'mysql:host=localhost:3306;dbname=restapi_test',
-                'username' => 'mmuslimabdulj',
-                'password' => 'Babang_030'
+                'username' => 'your_database_username',
+                'password' => 'your_database_password'
             ]
         ]
     ];
